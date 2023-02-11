@@ -1,0 +1,35 @@
+
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    {% if title %}
+    <title>{{title}} - auction</title>
+    {% else %}
+    <title>auction</title>
+    {% endif %}
+  </head>
+  <body>
+  <div id="header">
+    <span class="logo">Auction&Gallery</span>
+    <span class="user">
+            <a href="{{ url_for ('logs') }}">Logs</a>
+            <a href="{{ url_for ('apps') }}">Application&User</a>
+            <a href="{{ url_for ('apps_auction') }}">Application&Auctions</a>
+    </span>
+</div>
+    <div>
+	<div class="card">
+						<div class="pick-info">
+		<img class="list-image" src="{{ pick[6] }}"/>
+		<div class="movie-profile-info">
+			<h1>ID AUTHOR{{ pick[1] }}</h1>
+			<h2>ID OWNER {{ pick[2] }}</h2>
+			<h2>COST {{ pick[3] }}</h2>
+			<h2>education author {{ pick[8] }}</h2>
+        </div>
+			</div>
+		</div>
+</div>
+  </body>
+</html>

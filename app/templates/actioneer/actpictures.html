@@ -1,0 +1,40 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    {% if title %}
+    <title>{{title}} - auction</title>
+    {% else %}
+    <title>auction</title>
+    {% endif %}
+  </head>
+  <body>
+  <div id="header">
+    <span class="logo">Auction&Gallery</span>
+    <span class="user">
+            <a href="{{ url_for ('add_auction') }}">Add auction</a>
+            <a href="{{ url_for ('logout') }}">Logout</a>
+            <a href="{{ url_for ('index_admin') }}">Home</a>
+            <a href="{{ url_for ('list_apps_auction') }}">Application Auction</a>
+    </span>
+    </div>
+	<div>
+		<div class="listing">
+			<h2>Pictures555</h2>
+			<div class="scrolling-wrapper-flexbox">
+				{% for pick in pictures %}
+					<div class="card">
+						<div class="movie-info">
+							<a href="/pictures/{{ pictures.id }}">
+								<img class="list-image" src="{{ pick.path_pick }}"/>
+							</a>
+							<p class="img-caption">{{ pick.name_pick }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+        </div>
+    </div>
+  </body>
+</html>
+

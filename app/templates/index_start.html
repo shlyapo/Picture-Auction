@@ -12,13 +12,12 @@
   <div id="header">
     <span class="logo">Auction&Gallery</span>
     <span class="user">
-            <a href="{{ url_for ('send_app') }}">Logout</a>
-            <a href="{{ url_for ('logout') }}">Logout</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">SignUp</a>
     </span>
 </div>
     <div>
-        <a href="{{ url_for('auctions') }}">Auctions</a>
-        <a href="{{ url_for('pictures_rev') }}">Pictures</a>
+        <a href="{{ url_for('pictures') }}">Pictures</a>
     </div>
   </body>
 </html>

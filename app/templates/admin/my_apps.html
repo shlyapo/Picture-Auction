@@ -1,0 +1,39 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    {% if title %}
+    <title>{{title}} - auction</title>
+    {% else %}
+    <title>auction</title>
+    {% endif %}
+  </head>
+  <body>
+  <div id="header">
+    <span class="logo">Auction&Gallery</span>
+    <span class="user">
+        <a href="{{ url_for ('index_admin') }}">Home</a>
+            <a href="{{ url_for ('logs') }}">Logs</a>
+            <a href="{{ url_for ('apps') }}">Application&User</a>
+            <a href="{{ url_for ('apps_auction') }}">Application&Auctions</a>
+    </span>
+</div>
+    <hr>
+
+    <table class="table table-striped">
+      <tbody>
+      {% for log in apps %}
+      {% for elem in log %}
+      <tr>
+          <td>{{ elem }}</td>
+      {% endfor %}
+      <a href="/apps/{{ app.id }}" class="btn btn-primary my-2">Взять себе
+							</a>
+          </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <hr/>
+  </body>
+</html>
