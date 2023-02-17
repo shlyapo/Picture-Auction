@@ -1,0 +1,58 @@
+
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    {% if title %}
+    <title>{{title}} - auction</title>
+    {% else %}
+    <title>auction</title>
+    {% endif %}
+  </head>
+  <body>
+  <div id="header">
+    <span class="logo">Auction&Gallery</span>
+</div>
+    <div class="container">
+    <div class="row">
+        <form action="" method="post">
+            {{ registration_form.csrf_token }}
+            <div class="input-field col s12 m8">
+                <i class="material-icons prefix">Your name</i>
+                {{ registration_form.name_user(class_="validate") }}
+                {{ registration_form.name_user.label }}
+            </div>
+            <div class="input-field col s12 m8">
+                <i class="material-icons prefix">surname</i>
+                {{ registration_form.surname(class_="validate") }}
+                {{ registration_form.surname.label }}
+            </div>
+            <div class="input-field col s12 m8">
+                <i class="material-icons prefix">email</i>
+                {{ registration_form.email(class_="validate") }}
+                {{ registration_form.email.label }}
+            </div>
+            <div class="input-field col s12 m8">
+                <i class="material-icons prefix">login</i>
+                {{ registration_form.login(class_="validate") }}
+                {{ registration_form.login.label }}
+            </div>
+            <div class="input-field col s12 m8">
+                <i class="material-icons prefix">password</i>
+                {{ registration_form.password(class_="validate") }}
+                {{ registration_form.password.label }}
+            </div>
+            <div class="input-field col s12 m8">
+                {{ registration_form.recaptcha }}
+            </div>
+            <div class="input-field col s12 m8">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+  </body>
+</html>

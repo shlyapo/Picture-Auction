@@ -1,0 +1,49 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    {% if title %}
+    <title>{{title}} - auction</title>
+    {% else %}
+    <title>auction</title>
+    {% endif %}
+  </head>
+  <body>
+  <div id="header">
+    <span class="logo">Auction&Gallery</span>
+    <span class="user">
+        <a href="{{ url_for ('index_admin') }}">Home</a>
+            <a href="{{ url_for ('logs') }}">Logs</a>
+            <a href="{{ url_for ('apps') }}">Application&User</a>
+            <a href="{{ url_for ('apps_auction') }}">Application&Auctions</a>
+    </span>
+</div>
+    <hr>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+          <th>VARIANT</th>
+          <th>LOGIN</th>
+          <th>EMAIL</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for log in apps %}
+      <tr>
+          <td>{{ log[0] }}</td>
+          <td>{{ log[1] }}</td>
+          <td>{{ log[2] }}</td>
+          <td>{{ log[3] }}</td>
+            <td><a href="/apps/{{ log[0]}}">
+								Взять себе
+            </a></td>
+          </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <hr/>
+  </body>
+</html>

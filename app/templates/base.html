@@ -1,5 +1,7 @@
 <html>
   <head>
+      <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
     {% if title %}
     <title>{{title}} - microblog</title>
     {% else %}
